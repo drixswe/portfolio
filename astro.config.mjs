@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import icon from 'astro-icon'
 import vercel from '@astrojs/vercel'
@@ -10,5 +10,12 @@ export default defineConfig({
   integrations: [icon()],
   vite: {
     plugins: [tailwindcss()]
+  },
+  experimental: {
+    fonts: [{
+      provider: fontProviders.fontsource(),
+      name: 'Onest',
+      cssVariable: '--font-onest',
+    }]
   }
 })
