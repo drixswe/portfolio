@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@material/web": "^2.3.0",
+    "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.2",
-    "astro-capo": "^0.0.1"
+    "astro-capo": "^0.0.1",
+    "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4"
