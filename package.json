@@ -12,6 +12,7 @@
     "lint": "biome lint --error-on-warnings ./src"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.1.5",
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.2",
     "astro-capo": "^0.0.1",
