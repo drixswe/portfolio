@@ -1,5 +1,6 @@
 ---
 import Head from '@components/Head.astro'
+import Navbar from '@components/Navbar.astro'
 import '@styles/global.css'
 
 interface Props {
@@ -11,7 +12,10 @@ const { title = 'Drix - Portfolio' } = Astro.props
 
 <html lang="en">
 	<Head {title} />
-	<body class="font-dm-sans">
-		<slot />
+	<body class="font-dm-sans bg-black/90 text-gray-100">
+		<div class="m-auto flex flex-col max-w-3xl">
+			<Navbar />
+			<slot />
+		</div>
 	</body>
 </html>

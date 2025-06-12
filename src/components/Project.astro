@@ -1,0 +1,26 @@
+---
+import Language from './Language.astro'
+
+interface Props {
+	repo: PinnedRepo
+}
+
+const { repo } = Astro.props
+
+const repoLink = repo.website ? repo.website : repo.link
+const owner = repo.owner.includes('/') ? repo.owner : ''
+---
+
+<a
+  href={repoLink}
+  target="_blank"
+  class="bg-neutral-800 rounded-sm h-32 duration-300 hover:scale-105"
+>
+  <div class="flex flex-col justify-between p-3 h-full">
+    <div>
+      <h4>{owner + repo.repo}</h4>
+      <p class="text-sm line-clamp-2">{repo.description}</p>
+    </div>
+    <Language color={repo.languageColor} lang={repo.language} />
+  </div>
+</a>

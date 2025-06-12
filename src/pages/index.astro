@@ -1,5 +1,21 @@
 ---
+import Project from '@components/Project.astro'
 import Layout from '@layouts/Layout.astro'
+import { GH_PINNED_REPOS_URL } from '../constants'
+
+const pinnedRepos = await fetch(GH_PINNED_REPOS_URL)
+	.then((res) => res.json())
+	.catch((err) => {
+		console.error('Error fetching pinned repos:', err)
+		return []
+	})
 ---
 
-<Layout />
+<Layout>
+  <div class="space-y-4">
+		<h3 class="font-semibold">Pinned Repositories</h3>
+		<ul class="grid grid-cols-2 gap-4">
+    	{pinnedRepos.map((repo: PinnedRepo) => <Project {repo} />)}
+  	</ul>
+	</div>
+</Layout>
