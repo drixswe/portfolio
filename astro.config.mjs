@@ -7,16 +7,16 @@ import vercel from '@astrojs/vercel'
 export default defineConfig({
   site: 'https://drix.one',
   adapter: vercel(),
-	vite: {
-		plugins: [tailwindcss()]
-	},
-	experimental: {
-		fonts: [
-			{
-				cssVariable: '--font-dm-sans',
-				name: 'DM Sans',
-				provider: fontProviders.fontsource()
-			}
-		]
-	}
+  vite: {
+    plugins: [tailwindcss()]
+  },
+  experimental: {
+    fonts: [
+      {
+        cssVariable: '--font-dm-sans',
+        name: 'DM Sans',
+        provider: fontProviders.fontsource()
+      }
+    ]
+  }
 })

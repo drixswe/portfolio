@@ -4,11 +4,8 @@ import Layout from '@layouts/Layout.astro'
 import { GH_PINNED_REPOS_URL } from '../constants'
 
 const pinnedRepos = await fetch(GH_PINNED_REPOS_URL)
-	.then((res) => res.json())
-	.catch((err) => {
-		console.error('Error fetching pinned repos:', err)
-		return []
-	})
+  .then((res) => res.json())
+  .catch((err) => console.error(err))
 ---
 
 <Layout>
